@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Project 1 – Aidan Ramen</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+  <!-- Header -->
+  <div id="header">
+    <div class="top">
+      <div id="logo">
+        <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+        <h1 id="title">Aidan Ramen</h1>
+        <p>Computer Science Student</p>
+      </div>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html#portfolio" class="icon solid fa-arrow-left"> Back to Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="main">
+    <section class="one dark readable">
+      <div class="container">
+        <header>
+          <h2>AI Based Anti-Social Driving Detector</h2>
+        </header>
+        <p>
+          This project was done with a team of 6 members, Roshan Kumar, Lei Nero Garcia, Seniru Basnayake, Chun Hin Carven Suen, Aryan Raheja and myself. My role mainly consisted of making the dataset, developing pseudocode, training the model and creating the testing videos. 
+        </p>
+        <p>
+          This project detects anti-social driving behaviour, or just bad driving, through the perspective of traffic cameras in NSW. An object detection model is trained on a dataset of 1000 hand picked images from <a href="https://www.livetraffic.com/" target="_blank">livetraffic.com</a>. Afterwards we used Python to track vehicle movement through their bounding boxes
+         by using the X and Y coordinates of those boxes. Once tracking is achieved and smoothened out using Gaussian and Savitzky-Golay filters, we compare the vehicle's angle of direction with their past smoothed angles to detect and monitor the
+          distance between two vehicles to detect poor driving behaviours as classified below: 
+        </p>
+
+        <div style="text-align: center; margin-bottom: 2em;">
+            <h3>Illegal U-Turn Detection</h3>
+            <video controls width="640">
+                <source src="videos/U-TurnCss.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Detects when a vehicle performs an illegal u-turn. This is achieved through comparing the current and previous angles, a vehicle is flagged if the difference falls between 160 and 200 degrees. There is also a straight line ratio variable which determines if the path is highly curved or not. To know if the u-turn is illegal there would be a boolean
+              to see whether the road that the camera is facing allows u-turns or not. 
+            </p>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 2em;">
+            <h3>Tailgating Detection</h3>
+            <video controls width="640">
+                <source src="videos/Tailgating-Css.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Detects when one vehicle follows another too closely for an extended period, this is achieved by assigning leader and follower vehicles. Detection is confidence based and depends on the disance between vehicles, lane positions and alignment. These factors must persist for a certain duration to classify as tailgating. </p>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 2em;"></div>
+            <h3>Swerving/Weaving Detection</h3>
+            <video controls width="640">
+                <source src="videos/Swerving-Css.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Detects any erratic changes in turns using a direction index. This index includes directions such as left, right and straight. The system must detect at least 3 directional turns, with each change sustained for more than 7 frames, then the vehicle is flagged as swerving. </p>
+            <p>Below is an example of the images we used to train the model:
+              
+
+            </p>
+            <img src="images/livetraff.jpeg" alt="Live Traffic NSW image" width="800">
+        </div>
+        
+        <div style="display: flex; justify-content: center; gap: 40px; margin: 3em 0;">
+      <div style="text-align: center;">
+        <img src="images/resultsT.png" width="640" alt="Training sample from Bondi Junction">
+   
+      </div>
+      <div style="text-align: center;">
+        <img src="images/resultsT.png" width="640" alt="Additional training sample">
+    
+      </div>
+ 
+      </div>
+      <div style="text-align: center; margin: 2em auto; max-width: 800px;">
+        <p>
+          Although some true positives were overlooked, tailgating detection showed perfect accuracy (1.00) but a recall of 0.60, suggesting high confidence in flagged occurrences.
+          With balanced macro and weighted averages, the task's overall accuracy of 80% demonstrated its resilience.
+        </p>
+      </div>
+      <div style="text-align: center; margin: 2em auto; max-width: 800px;">
+        <p>
+          With an excellent F1-score of 0.82, illegal U-turn identification was aided by distinct angular trajectory parameters.
+          With an F1-score of 0.71, swerving was more difficult, most likely as a result of the noisier lateral movement patterns.
+          For all three classes, the system-wide accuracy was 77%.
+
+        </p>
+      </div>
+
+
+
+        <!-- <h3>Tech Stack</h3>
+        <p>Python, Flask, OpenCV, JavaScript</p>
+
+        <h3>Links</h3>
+        <ul>
+          <li><a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a></li>
+          <li><a href="https://yourprojectdemo.com" target="_blank">Live Demo</a></li>
+        </ul>
+
+        <img src="images/project1-screenshot.jpg" alt="Project Screenshot" class="image featured" />
+      </div> -->
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <ul class="copyright">
+      <li>&copy; Aidan Ramen.</li>
+      <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

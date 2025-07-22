@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Project 1 – Aidan Ramen</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+  <!-- Header -->
+  <div id="header">
+    <div class="top">
+      <div id="logo">
+        <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+        <h1 id="title">Aidan Ramen</h1>
+        <p>Computer Science Student</p>
+      </div>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html#portfolio" class="icon solid fa-arrow-left"> Back to Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="main">
+    <section class="one dark readable">
+      <div class="container">
+        <header>
+          <h2>Brute Force Attack </h2>
+        </header>
+        <p>
+          This project was a simple Brute Force Attack using John the Ripper (JtR) to gain access to passwords on another machine. The attack section uses MetaSploitable 2 as the target machine with access being assumed through an open SSH or Telnet service. Privileges are 
+          then escalated using sudo -i to depict a root user logging in.
+        </p>
+          <div style="text-align: center;">
+            <img src="images/bfa1.png" alt="Description of image" >
+            <p>Password and user files </p>
+          </div>
+          <div style="text-align: center;">
+            <img src="images/bfa2.png" alt="Description of image" >
+            <p>Sending the files from target machine to attacker using Netcat </p>
+          </div>
+          <div style="text-align: center;">
+            <img src="images/bfa3.png" alt="Description of image" >
+            <p>Brute force attack with JtR </p>
+          </div>
+
+          <p>
+            When learning the attack side I also made sure to learn how to protect against it, such as making sure only authorised users have permission, preventing privilege escalation amd using hashing algorithms to protest passwords. 
+          </p>
+          <div style="text-align: center;">
+            <img src="images/bfd1.png" alt="Description of image" >
+            <p>Using ls to make sure only authorised users have access </p>
+          </div>
+          <div style="text-align: center;">
+            <img src="images/bfd2.png" alt="Description of image" >
+            <p>Using sudo deluser to remove unauthorised users and using sudo visudo to see users who can use sudo commands</p>
+          </div>
+          <div style="text-align: center;">
+            <img src="images/bfd3.png" alt="Description of image" >
+            <p>Using sudo grep [username] /etc/shadow to check prefixes for hashes </p>
+          </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <ul class="copyright">
+      <li>&copy; Aidan Ramen.</li>
+      <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
